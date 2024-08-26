@@ -1,0 +1,32 @@
+from uib_inf100_graphics.simple import canvas, display
+
+#canvas.create_oval(10, 20, 390, 90)
+
+#Hode
+canvas.create_oval(10, 110, 390, 290, fill='lightGreen')
+
+
+#briller
+canvas.create_line(130, 185, 270, 185)
+
+#Høyre brille
+canvas.create_rectangle(270, 170,300, 200, )
+#venstre brille
+canvas.create_rectangle(100, 170,130 ,200, )
+
+canvas.create_line(100, 170, 10, 110,)
+
+canvas.create_line(300, 170, 390, 110,)
+
+#Shit
+ax, ay = 200, 150
+canvas.create_text(ax, ay, text='"HTEK_4_EVER"', font=('Times', 20, 'italic bold'))
+
+#2
+from uib_inf100_graphics.helpers import load_image_http, scaled_image
+
+# Image credits: unsplash.com/@tranmautritam
+image = load_image_http('https://preview.redd.it/t8n1ht66xi241.jpg?auto=webp&s=6929ba968f3664f587d3cfee8f1370b96b80ac6b')
+
+smaller_image = scaled_image(image, 0.2)
+canvas.create_image(150, 10, pil_image=smaller_image, anchor='nw')
