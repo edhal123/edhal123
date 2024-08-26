@@ -1,3 +1,104 @@
+# This is a script that use Python to calculate monthly cost of a loan.
+mortage.py
+
+# Input
+house_price = 1_500_000
+deductible = 280_000
+yearly_interest_rate_pct = 7.5
+years = 30
+monthly_fee = 65
+
+
+# Computation
+loan = house_price - deductible
+months = years * 12
+
+yearly_rate = yearly_interest_rate_pct / 100
+monthly_rate = yearly_rate / 12
+
+discount_factor = (1 - (1 + monthly_rate) ** -months) / monthly_rate
+monthly_term_amount = loan / discount_factor + monthly_fee
+monthly_term_amount = round(monthly_term_amount, 2)
+
+
+# Output
+#print(f'Monthly term amount: {monthly_term_amount}')
+print(f"{discount_factor}",)
+
+---------------------------------------------------------------------------
+Longest_line.py
+
+navn=str(input("hva er ditt navn"))
+adresse=str(input("Hva er din adresse?"))
+post=str(input("Hva er ditt postnummer og poststed?"))
+
+ln=len(navn)
+la=len(adresse)
+lp=len(post)
+
+print(navn,"-", adresse,"-", post)
+
+
+if ln > la and ln > lp:
+    print(ln,"navn")
+
+if la > ln and la > lp:
+    print(la,"adresse")
+
+
+if lp > la and lp > ln:
+    print(lp,"post")
+---------------------------------------------------------------------------
+distance.py
+x1=int(input("x1"))
+y1=int(input("y1"))
+x2=int(input("x2"))
+y2=int(input("y2"))
+
+xt=x2-x1
+yt=y2-y1
+
+avstand= ((xt**2) + (yt**2))**(1/2)
+
+print("Avstanden mellom", (x1, x2) ,"og" ,(x2, y2), "er", avstand)
+---------------------------------------------------------------------------
+pigs_tails.py
+from uib_inf100_graphics.simple import canvas, display
+
+# Legs
+canvas.create_rectangle(110, 230, 150, 300, fill="pink")
+canvas.create_rectangle(300, 230, 340, 300, fill="pink")
+canvas.create_rectangle(80, 260, 120, 330, fill="pink")
+canvas.create_rectangle(280, 260, 320, 330, fill="pink")
+
+# Ears
+canvas.create_polygon(260, 70, 260, 30, 290, 60, fill="pink", outline="black")
+canvas.create_polygon(310, 55, 330, 30, 340, 70, fill="pink", outline="black")
+
+# Body
+canvas.create_oval(50, 100, 350, 300, fill="pink")
+
+# Head
+canvas.create_oval(250, 50, 350, 150, fill="pink")
+
+# Eyes
+canvas.create_oval(280, 70, 295, 85, fill="black")
+canvas.create_oval(320, 70, 335, 85, fill="black")
+
+# Nose
+canvas.create_oval(290, 100, 330, 130, fill="lightpink")
+canvas.create_oval(295, 110, 305, 120, fill="black")
+canvas.create_oval(315, 110, 325, 120, fill="black")
+
+# Tail
+canvas.create_line(50, 200, 30, 150, 50, 100)
+
+#Tallene kommer parvis x1, y1, x2, y2, x3, y3 og så videre. For eksempel betyr de to første tallene i utlevert kode (200, 50)
+
+
+display(canvas)
+---------------------------------------------------------------------------
+face.py
 from uib_inf100_graphics.simple import canvas, display
 
 #canvas.create_oval(10, 20, 390, 90)
@@ -30,3 +131,12 @@ image = load_image_http('https://preview.redd.it/t8n1ht66xi241.jpg?auto=webp&s=6
 
 smaller_image = scaled_image(image, 0.2)
 canvas.create_image(150, 10, pil_image=smaller_image, anchor='nw')
+
+
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
