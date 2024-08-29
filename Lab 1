@@ -134,6 +134,16 @@ canvas.create_image(150, 10, pil_image=smaller_image, anchor='nw')
 
 
 ---------------------------------------------------------------------------
+diff_fr=int(lengste_linje-lengde_fr)
+diff_ar=int(lengste_linje-lengde_ar)
+diff_tr=int(lengste_linje-lengde_tr)
+
+
+print((lengste_linje+4)*"@")
+print(f'@ {" "*(diff_fr)}{fr} @')
+print(f'@ {" "*(diff_ar)}{ar} @')
+print(f'@ {" "*(diff_tr)}{tr} @')
+print((lengste_linje+4)*"@")
 ---------------------------------------------------------------------------
 ---------------------------------------------------------------------------
 ---------------------------------------------------------------------------
