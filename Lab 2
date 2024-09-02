@@ -1,0 +1,311 @@
+volume_of_box.py
+def volume_of_box(w,h,d):
+    return w*h*d
+
+print('Testing volume of box... ', end='')
+assert 30 == volume_of_box(2, 3, 5)
+assert 1 == volume_of_box(1, 1, 1)
+print('OK')
+
+
+-------------------------------------------------------
+stickmen2.py
+from uib_inf100_graphics.simple import canvas, display
+
+#Mener vi gjorde denne me craig
+
+canvas.create_oval(60, 80, 140, 160)   # Head
+canvas.create_line(100, 160, 100, 280) # Body
+canvas.create_line(50, 180, 150, 180)  # Arms
+canvas.create_line(100, 280, 50, 330)  # Left leg
+canvas.create_line(100, 280, 150, 330) # Right leg
+
+display(canvas)
+-------------------------------------------------------
+soup.py
+from uib_inf100_graphics.simple import canvas, display
+
+def draw_soup_can(canvas, x, y, bg_color, text_color):
+    canvas.create_rectangle(x, y+10, x+100, y+130, fill=bg_color)
+    canvas.create_oval(x, y, x+100, y+20, fill='gray')
+    canvas.create_oval(x, y+120, x+100, y+140, fill='gray')
+    canvas.create_text(x+50, y+50, text='SOUP',
+                       fill=text_color, font=('Arial', 16, 'bold'))
+
+draw_soup_can(canvas, 50, 30, 'red', 'yellow')
+
+print(draw_soup_can(canvas,250,30,"blue","lightblue"))
+print(draw_soup_can(canvas,50,250,"green","purple"))
+print(draw_soup_can(canvas,250,250,"white","yellow"))
+
+display(canvas)
+-------------------------------------------------------
+shortest_words.py
+s1=str(input("Skriv et ord:"))
+s2=str(input("Skriv et annet ord:"))
+s3=str(input("Skriv et siste ord:"))
+
+l1=len(s1)
+l2=len(s2)
+l3=len(s3)
+
+if l1<l2 and l1<l3:
+    print(s1)
+
+elif l2<l1 and l2<l3:
+    print(s2)
+
+elif l3<l1 and l3<l2:
+    print(s3)
+
+elif l1==l2==l3:
+    print(s1)
+    print(s2)
+    print(s3)
+elif l1 == l2:
+    print(s1)
+    print(s2)
+elif l2 == l3:
+    print(s2)
+    print(s3)
+elif l1 == l3:
+    print(s1)
+    print(s3)
+
+-------------------------------------------------------
+pop_art.py
+from uib_inf100_graphics.simple import canvas, display
+from uib_inf100_graphics.helpers import load_image_http, scaled_image
+
+# Image credits: unsplash.com/@tranmautritam
+image = load_image_http('https://tinyurl.com/inf100kitten-png')
+
+
+smaller_image = scaled_image(image, 0.2)
+
+
+
+
+def draw_soup_can(canvas, x, y):
+    canvas.create_rectangle(x, y+10, x+100, y+130, fill='blue')
+    canvas.create_oval(x, y+10, x+100, y+130, fill='gray')
+    canvas.create_image(x+20, y+20, pil_image=smaller_image, anchor='nw')
+    canvas.create_rectangle(x, y, x+100, y+20,fill='yellow')
+    canvas.create_rectangle(x, y+120, x+100, y+140,fill='yellow')
+
+
+
+
+
+print(draw_soup_can(canvas,50,30))
+print(draw_soup_can(canvas,250,30))
+print(draw_soup_can(canvas,50,250))
+print(draw_soup_can(canvas,250,250))
+
+display(canvas)
+-------------------------------------------------------
+# pig_main.py
+from uib_inf100_graphics.simple import canvas, display
+from pig_head import draw_head
+from pig_body import draw_body
+
+# TODO: kall på funksjonene draw_body og draw_head
+...
+
+if __name__ == '__main__':
+    from uib_inf100_graphics.simple import canvas, display
+    draw_body(canvas, 50, 100, 250, 250)
+    #draw_body(canvas, 240, 300, 350, 350)
+
+if __name__ == '__main__':
+    from uib_inf100_graphics.simple import canvas, display
+    draw_head(canvas, 200, 100, 50)
+
+
+
+display(canvas)
+-------------------------------------------------------
+parity.py
+def parity(x):
+    svar=x%2
+    if svar==0:
+        return("Partall")
+    else:
+        return("Oddetall")
+
+
+print("Tester parity... ", end="")
+assert "Partall" == parity(0)
+assert "Oddetall" == parity(1) 
+assert "Partall" == parity(42)
+assert "Oddetall" == parity(99)
+print("OK")
+-------------------------------------------------------
+marilyn.py
+from uib_inf100_graphics.simple import canvas, display
+
+def draw_marilyn(canvas, x, y,background_color,detail_color):
+    # Background
+    canvas.create_rectangle(x, y, x+100, y+100,fill=background_color ,outline='')
+
+    # Face
+    canvas.create_oval(x+20, y+20, x+80, y+80, outline=detail_color, width=2)
+
+    # Eyes
+    canvas.create_oval(x+35, y+40, x+45, y+50, fill=detail_color, outline='')
+    canvas.create_oval(x+55, y+40, x+65, y+50,fill=detail_color,outline='')
+
+    # Mouth
+    canvas.create_arc(x+35, y+50, x+65, y+70, start=180, extent=180,
+                      fill=detail_color, outline='')
+
+# Drawing four faces
+draw_marilyn(canvas, 50, 50,"red","yellow")
+draw_marilyn(canvas, 250, 50,"blue","lightblue")
+draw_marilyn(canvas, 50, 250,"green","purple")
+draw_marilyn(canvas, 250, 250,"white","turquoise")
+
+display(canvas)
+-------------------------------------------------------
+longest_ord.py
+s1=str(input("Skriv et ord:"))
+s2=str(input("Skriv et annet ord:"))
+s3=str(input("Skriv et siste ord:"))
+
+l1=len(s1)
+l2=len(s2)
+l3=len(s3)
+
+if l1>l2 and l1>l3:
+    print(s1)
+
+elif l2>l1 and l2>l3:
+    print(s2)
+
+elif l3>l1 and l3>l2:
+    print(s3)
+
+elif l1==l2==l3:
+    print(s1)
+    print(s2)
+    print(s3)
+elif l1 == l2:
+    print(s1)
+    print(s2)
+elif l2 == l3:
+    print(s2)
+    print(s3)
+elif l1 == l3:
+    print(s1)
+    print(s3)
+-------------------------------------------------------
+joker.py
+tall1 = 3
+tall2 = 4
+tall3 = 5
+tall4 = 6
+tall5 = 1
+
+
+if tall1<=4:
+    print("opp")
+else:
+    print("ned")
+
+if tall2<=4:
+    print("opp")
+else:
+    print("ned")
+
+if tall3<=4:
+    print("opp")
+else:
+    print("ned")
+
+if tall4<=4:
+    print("opp")
+else:
+    print("ned")
+
+
+if tall5<=4:
+    print("opp")
+else:
+    print("ned")
+
+-------------------------------------------------------
+frame.py
+def frame(text):
+    if text.startswith('#'):
+        text = '#' + text
+    else:
+        text = '# ' + text
+
+    if text.endswith('#'):
+        return text + ' #'
+    return text + ' #'
+
+
+print('Testing frame... ', end='')
+s = 'Carpe diem'
+s = frame(s)
+assert '## Carpe diem ##' == frame(s)
+print('OK')
+-------------------------------------------------------
+
+distance.py
+def distance(x1, y1, x2, y2):
+    totx=x2-x1
+    toty=y2-y1
+    return ((totx**2) + (toty**2))**(1/2)
+
+from math import isclose
+print("Tester distance... ", end="")
+assert isclose(3, distance(103, 42, 100, 42))
+assert isclose(4, distance(2, 100, 2, 104))
+assert isclose(5, distance(0, 3, 4, 0))
+assert isclose(1.414213562373, distance(0, 0, 1, 1))
+assert isclose(1.414213562373, distance(3, 4, 2, 3))
+print("OK")
+-------------------------------------------------------
+circles_overlap.py
+x1=1
+y1=1
+r1=5
+
+x2=2
+y2=2
+r2=10
+
+
+def circles_overlap(x1,y1,r1,x2,y2,r2):
+    sumr=r1+r2
+    p1p2=(((x2-x1)**2) + ((y2-y1)**2))**(1/2)
+    if p1p2 <= sumr:
+        return True
+    else:
+        return False
+
+# Sirkel1 med sentrum (0, 0) og radius 1
+# Sirkel2 med sentrum (1, 1) og radius 1
+# Overlapper
+print(circles_overlap(0, 0, 1, 1, 1, 1)) # Skal skrive ut True
+
+# Sirkel1 med sentrum (0, 0) og radius 2
+# Sirkel2 med sentrum (4, 1) og radius 2
+# Overlapper ikke
+print(circles_overlap(0, 0, 2, 4, 1, 2)) # Skal skrive ut False
+
+# Sirkel1 med sentrum (0, 0) og radius 3
+# Sirkel2 med sentrum (5, 0) og radius 2
+# De overlapper hverandre i et enkelt punkt
+print(circles_overlap(0, 0, 3, 5, 0, 2)) # Skal skrive ut True
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+
