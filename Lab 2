@@ -301,7 +301,52 @@ print(circles_overlap(0, 0, 2, 4, 1, 2)) # Skal skrive ut False
 # De overlapper hverandre i et enkelt punkt
 print(circles_overlap(0, 0, 3, 5, 0, 2)) # Skal skrive ut True
 
--------------------------------------------------------
+----------------------------------------------------
+visible_light.py
+print("Angi enhet (nm eller THz):")
+s=input("")  
+
+if s == "nm":
+    print("Angi verdi i nm")
+    s2=int(input())
+    if s2 <=450:
+        print("Violet")
+    elif s2<=485:
+        print("Blue")
+    elif s2<=500:
+        print("Cyan")
+    elif s2<=565:
+        print("Green")
+    elif s2<=590:
+        print("Yellow")
+    elif s2<=625:
+        print("Orange")
+    elif s2<=750:
+        print("Red")
+    elif s2<=800:
+        print("320 nm er utenfor det synlige spekteret.")
+
+if s =="THz":
+    print("Angi verdi i THz")
+    s2=int(input())
+    if s2 <=480:
+        print("Red")
+    elif s2<=510:
+        print("Orange")
+    elif s2<=530:
+        print("Yellow")
+    elif s2<=600:
+        print("Green")
+    elif s2<=620:
+        print("Cyan")
+    elif s2<=670:
+        print("Blue")
+    elif s2<=790:
+        print("Violet")
+    elif s2<=800:
+        print("800 THz er utenfor det synlige spekteret.")
+
+    
 
 -------------------------------------------------------
 
