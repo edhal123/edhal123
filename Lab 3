@@ -1,20 +1,49 @@
-def draw_train(canvas,x_train,y_train,n):
-    wagon_width=20
+def saving(l, sp, k):
 
-    for i in range(n):
+
+    ek = 0
+    må=0
+    sp=sp/100 #må gjøre om fra 20% til 0.2
+
+    while ek < 0.25 * k:
+        ek += ((l * sp) / 12)
+        ek += ek * 0.04 / 12
+        må += 1
+
+    return må
+
+print("Tester saving... ", end="")
+assert saving(500000, 20, 3000000) == 79
+assert saving(900000, 10, 5000000) == 133
+print("OK")
+
+
+-------------------------------------------------------------------------
+def color_train_A(canvas,x_train,y_train,colors):
+    wagon_width=15
+
+    for i in range(len(colors)):
+        color=colors[i]
         y_wagon=y_train
         x_wagon=x_train + i* wagon_width
-        draw_wagon(canvas,x_wagon,y_wagon, wagon_width)
+        draw_wagon(canvas, x_wagon ,y_wagon, wagon_width,color)
 
 
-def draw_wagon(canvas,left,top,width):
-    height=width
+def draw_wagon(canvas,left,top,width,color):
+    height=width-5
     right=left+width
     bottom=top+height
 
-    canvas.create_rectangle(left,top,right,bottom)
+    canvas.create_rectangle(left,top,right,bottom,fill=color)
+    canvas.create_oval(
+        left+width/5,
+        bottom-height/5,
+        left+2*width/5,
+        bottom+height/5,
+    )
 
-if __name__ =="main":
+if __name__ =="__main__":
     from uib_inf100_graphics.simple import canvas, display
-    draw_train(100,100,5)
+    colors = ['violet', 'indigo', 'blue', 'green', 'yellow', 'orange', 'red']
+    color_train_A(canvas,20,10,colors)
     display(canvas)
