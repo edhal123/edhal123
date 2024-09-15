@@ -1,0 +1,20 @@
+def draw_train(canvas,x_train,y_train,n):
+    wagon_width=20
+
+    for i in range(n):
+        y_wagon=y_train
+        x_wagon=x_train + i* wagon_width
+        draw_wagon(canvas,x_wagon,y_wagon, wagon_width)
+
+
+def draw_wagon(canvas,left,top,width):
+    height=width
+    right=left+width
+    bottom=top+height
+
+    canvas.create_rectangle(left,top,right,bottom)
+
+if __name__ =="main":
+    from uib_inf100_graphics.simple import canvas, display
+    draw_train(100,100,5)
+    display(canvas)
